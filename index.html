@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Income Tax Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <form id="incomeForm">
+          <label for="grossIncome">
+            Enter gross annual income:
+            <span class="tooltip" title="Gross annual income is your total salary in a year before any deduction">&#9432;</span>
+          </label>
+          <br>
+          <input type="number" id="grossIncome" name="grossIncome" required>
+          <span class="error-icon" id="grossIncomeError"></span>
+          <br><br>
+      
+          <label for="extraIncome">
+            Enter extra income:
+            <span class="tooltip" title="Extra income includes any additional earnings beyond your gross annual income">&#9432;</span>
+          </label>
+          <br>
+          <input type="number" id="extraIncome" name="extraIncome" required>
+          <span class="error-icon" id="extraIncomeError"></span>
+          <br><br>
+      
+          <label for="ageGroup">
+            Select age group:
+            <span class="tooltip" title="Please select your age group">&#9432;</span>
+          </label>
+          <br>
+          <select id="ageGroup" name="ageGroup" required>
+            <option value="">Select Age Group</option>
+            <option value="<40">&lt; 40</option>
+            <option value=">=40&<60">&ge; 40 &lt; 60</option>
+            <option value=">=60">&ge; 60</option>
+          </select>
+          <span class="error-icon" id="ageGroupError"></span>
+          <br><br>
+      
+          <label for="deductions">
+            Enter total applicable deductions:
+            <span class="tooltip" title="Total applicable deductions include any deductions eligible for tax exemption">&#9432;</span>
+          </label>
+          <br>
+          <input type="number" id="deductions" name="deductions" required>
+          <span class="error-icon" id="deductionsError"></span>
+          <br><br>
+      
+          <button type="submit">Calculate Tax</button>
+        </form>
+      </div>
+      
+
+  <div class="modal" id="modal">
+    <div >
+        <div class="modal-content" id="modal-content">
+            <!-- Tax calculation result will be displayed here -->
+          </div>
+          <button class="close-btn" id="close-modal-btn">Close</button>
+        </div>
+    </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
